@@ -29,9 +29,9 @@ class GameLogic {
         });
         Entities.FindByClassname(null, "player").PrecacheScriptSound(this.laserchart.audio_name);
 
-        title_text = ::RhythmLasers.TitleText(format("%s - %s", this.laserchart.artist, this.laserchart.title));
-        stats_text = ::RhythmLasers.StatsText();
-        result_text = ::RhythmLasers.ResultText();
+        title_text = ::Main.TitleText(format("%s - %s", this.laserchart.artist, this.laserchart.title));
+        stats_text = ::Main.StatsText();
+        result_text = ::Main.ResultText();
 
         result_audio_ent = SpawnEntityFromTable("ambient_generic", 
         {
@@ -41,7 +41,7 @@ class GameLogic {
             spawnflags = 33 // Play everywhere AND is not looped
         });
 
-        death_event_listener = ::RhythmLasers.Event("player_death", this, "player_died");
+        death_event_listener = ::Main.Event("player_death", this, "player_died");
     }
 
     function start_laserchart() {

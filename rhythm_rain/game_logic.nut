@@ -2,11 +2,11 @@ class GameLogic {
     rain_chart = null;
 
     timer_ent = null;
-    audio_ent = null;
+    music = null;
     start_time = 0;
     current_index = 0;
 
-    playfield_spawn_center = Vector(-2046, 6142, 1464);
+    playfield_spawn_center = Vector(-2046, 6142, 1540);
 
     piss_maker_ent = null;
     droplet_maker_ent = null;
@@ -16,14 +16,7 @@ class GameLogic {
         this.rain_chart = rain_chart;
         
         timer_ent = Entities.FindByName(null, "RAIN::TIMER");
-        audio_ent = SpawnEntityFromTable("ambient_generic", 
-        {
-            targetname = "audio",
-            Message = this.rain_chart.audio_name,
-            Health = 10, // Volume
-            spawnflags = 33 // Play everywhere AND is not looped
-        });
-        Entities.FindByClassname(null, "player").PrecacheScriptSound(this.rain_chart.audio_name);
+        music = ::Main.Audio(this.rain_chart.audio_name); 
 
         piss_maker_ent = Entities.FindByName(null, "PISS::MAKER");
         droplet_maker_ent = Entities.FindByName(null, "DROPLET::MAKER");
@@ -33,24 +26,12 @@ class GameLogic {
     function start_rainchart() {
         start_time = Time();
         EntFire(timer_ent.GetName(), "Enable", null, 0.0, null);
-        EntFire(
-            audio_ent.GetName(), 
-            "Pitch", 
-            100 * 1.0,
-            0.0,
-            null
-        );
+        music.play(1.0);
     }
 
     function stop_rainchart() {
         EntFire(timer_ent.GetName(), "Disable", null, 0.0, null);
-        EntFire(
-            audio_ent.GetName(), 
-            "Volume", 
-            "0", 
-            0, 
-            null
-        );
+        music.stop();
     }
 
     function update() {

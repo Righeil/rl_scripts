@@ -3,7 +3,7 @@
     game_logic = null
 
     function start_rainchart() {
-        IncludeScript("rl_scripts/rhythm_rain/rain_charts/sendan_life")
+        IncludeScript("rl_scripts/rhythm_rain/rain_charts/far_in_the_blue_sky")
         game_logic = ::RhythmRain.GameLogic(chart);
         game_logic.start_rainchart();
     }

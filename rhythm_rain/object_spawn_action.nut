@@ -1,0 +1,1 @@
+EntFire(self.GetName(), "Open", null, 0.0, null);

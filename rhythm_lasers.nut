@@ -30,7 +30,5 @@ IncludeScript("rl_scripts/rhythm_lasers/game_logic", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/score", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/settings", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/modifiers", ::RhythmLasers);
-IncludeScript("rl_scripts/rhythm_lasers/event", ::RhythmLasers);
-IncludeScript("rl_scripts/rhythm_lasers/text", ::RhythmLasers);
 
 ::RhythmLasers.init();
