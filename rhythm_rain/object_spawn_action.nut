@@ -1,1 +1,2 @@
-EntFire(self.GetName(), "Open", null, 0.0, null);
+self.__KeyValueFromFloat("speed", 1700);
+EntFireByHandle(self, "Open", "", 0, null, null)

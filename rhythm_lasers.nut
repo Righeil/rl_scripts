@@ -27,7 +27,6 @@ IncludeScript("rl_scripts/rhythm_lasers/laserchart", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/lasercharts/list", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/song_select", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/game_logic", ::RhythmLasers);
-IncludeScript("rl_scripts/rhythm_lasers/score", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/settings", ::RhythmLasers);
 IncludeScript("rl_scripts/rhythm_lasers/modifiers", ::RhythmLasers);
 

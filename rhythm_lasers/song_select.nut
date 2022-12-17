@@ -22,8 +22,7 @@ class SongSelect {
     function select_laserchart() {
         local playfield_tp_destination_ent = Entities.FindByName(null, "playfield_tp_destination");
         local player_ent = Entities.FindByClassname(null, "player");
-        player_ent.SetOrigin(playfield_tp_destination_ent.GetOrigin());
-        player_ent.SetAbsAngles(playfield_tp_destination_ent.GetAbsAngles());
+        player_ent.SetAbsOrigin(playfield_tp_destination_ent.GetAbsOrigin());
 
         // УДАЛИ НАХУЙ ЭТО
         EntFire("servercommand", "Command", "stopsoundscape", 0.0, null);

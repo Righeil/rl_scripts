@@ -19,6 +19,7 @@ class GameLogic {
         this.laserchart = laserchart;
         this.settings = settings;
         this.modifiers = modifiers;
+        score = ::Main.LaserScore()
 
         audio_ent = SpawnEntityFromTable("ambient_generic", 
         {
@@ -45,8 +46,6 @@ class GameLogic {
     }
 
     function start_laserchart() {
-        score = ::RhythmLasers.Score()
-
         title_text.display();
         stats_text.update(modifiers, score);
         stats_text.display();

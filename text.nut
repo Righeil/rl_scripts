@@ -49,6 +49,15 @@ class StatsText extends Text {
     }
 }
 
+class RainStatsText extends StatsText {
+    function update(modifiers, score) {
+        local message = format("Hits: %i | Music speed: %.2fx", score.hit_count, modifiers.music_speed);
+        message += format(" | Health: %i", modifiers.health);
+        
+        entity.__KeyValueFromString("message", message);
+    }
+}
+
 class ResultText extends Text {
     constructor() {
         entity = SpawnEntityFromTable("game_text", {
